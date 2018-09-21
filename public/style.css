@@ -1,0 +1,36 @@
+/* for latez */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: slategray; 
+}
+
+.navbar {
+    font-family: 'Pacifico', cursive;
+}
+
+.h5 {
+    font-family: 'Quicksand', sans-serif;
+    color: darkred;
+}
+
+.btn {
+    color: darkred;
+}
+
+.titles{
+    color: darkslategray;
+}
+
+.artPost {
+    margin: auto;
+    align-content: center;
+}
+
+.actualInput{
+    align-content: center;
+    padding: auto;
+}
+.inputs {
+    margin: auto;
+    width: 80%
+}

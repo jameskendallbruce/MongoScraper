@@ -1,0 +1,61 @@
+<nav class="navbar navbar-light bg-light">
+    <a href="/" class="navbar-brand scraper" id="start"><h1 class="titles">Click here to Scrape</h1></a>
+    <h5 class="h5">Scraping from CartoonBrew to bring you animation news and shorts.</h5>
+</nav>
+
+
+
+<div class="container">
+
+    <div class="row artPost">
+
+        {{#each Article}}
+        
+        <div class="card m-3 artCard" style="width:30%">
+            <img class="card-img-top" src="{{this.img}}" alt="Card image cap">
+            <div class="card-body">
+                <a href="{{this.link}}"><h5 class="card-title titles">{{this.title}}</h5></a>
+                <p class="card-text">{{this.summary}}</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted"><button type="button" class="btn commentbtn" data-toggle="modal" data-target="#notesModal{{this.id}}" data-id="{{this.id}}">Comment</button></small>
+            </div>
+
+                {{!-- modal goodness --}}
+
+                <div class="modal fade" id="notesModal{{this.id}}" tabindex="-1" role="dialog" aria-labelledby="notesModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <form>
+                                <div class="modal-header">
+                                    <h5 class="modal-title note" id="{{this.id}}artTitle">{{this.title}}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="container actualInputs">
+                                    
+                                    <input type="text" id="{{this.id}}title"  class="titleinput note inputs row" name="title"/>
+
+                                    <input type="text" id="{{this.id}}body" class="bodyinput note inputs row" name="body"/>
+                                
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn save" data-id="{{this.id}}">Save Comment</button>
+                                    <button type="button" class="btn delete" data-id="{{this.id}}">Delete Comment</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            
+        </div>
+        {{/each}}
+
+    </div>
+
+</div>
